@@ -8,3 +8,4 @@
        - run: sudo pip install pipenv
        - run: pipenv install
        - run: pipenv run pytest test_sample.py
+       - run: echo "hello"
