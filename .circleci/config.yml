@@ -5,6 +5,6 @@
      docker:
        - image: circleci/python:3.6.4
      steps: 
-       - run: sudo pip install pipenv
-       - run: pipenv install
-       - run: pipenv run pytest test_sample.py
+       - checkout
+       - run: sudo pip install pytest
+       - run: pytest test_sample.py 
