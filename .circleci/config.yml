@@ -5,8 +5,8 @@
        - image: quoinedev/python3.6-pandas-alpine
      steps:
        - checkout
-       - run: echo "A first hello"
-       - run: sleep 25
+       - run: echo "A first hello 2"
+       - run: sleep 3
    two:
      docker:
        - image: circleci/ruby:2.4.1
