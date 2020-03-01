@@ -1,24 +1,15 @@
  version: 2
  jobs:
-   one:
+   build:
+     working_directory:~/
      docker:
-       - image: quoinedev/python3.6-pandas-alpine
+       - image: circleci/python:3.6.4
      steps:
        - checkout
-       - run: echo "A first hello 2"
-       - run: sleep 3
-   otao:
-     docker:
-       - image: circleci/ruby:2.4.1
-     steps:
-       - checkout
-       - run: echo "A more familiar hi"
-       - run: sleep 5
-       - run: echo "A more familiar hi2"
-       - run: echo000000000 "A more familiar hi2"
- workflows:
-   version: 2
-   one_and_otao:
-     jobs:
-       - one
-       - otao
+       - run:
+         command: |
+           sudo pip install pipenv
+           pipenv install
+       - run:
+         command: |
+           pipenv run pytest test_sample.py
