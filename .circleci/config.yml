@@ -1,10 +1,11 @@
  version: 2
  jobs:
    build:
-     working_directory: ~/
      docker:
        - image: circleci/python:3.6.4
      steps: 
+       - run: pwd
        - checkout
+       - run: pwd
        - run: sudo pip install pytest
        - run: pytest test_sample.py 
