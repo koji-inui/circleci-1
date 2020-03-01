@@ -7,7 +7,7 @@
        - checkout
        - run: echo "A first hello 2"
        - run: sleep 3
-   two:
+   otao:
      docker:
        - image: circleci/ruby:2.4.1
      steps:
@@ -15,9 +15,10 @@
        - run: echo "A more familiar hi"
        - run: sleep 5
        - run: echo "A more familiar hi2"
+       - run: echo000000000 "A more familiar hi2"
  workflows:
    version: 2
-   one_and_two:
+   one_and_otao:
      jobs:
        - one
-       - two
+       - otao
